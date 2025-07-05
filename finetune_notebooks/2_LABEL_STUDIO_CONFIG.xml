@@ -1,0 +1,130 @@
+
+
+LABEL STUDIO - LABELING INTERFACE CONFIG:
+
+<View>
+  <Style>
+    .message-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .system-role {
+      background-color: #f0f0f0;
+      color: #555;
+    }
+    .user-role {
+      background-color: #e0f7fa;
+      color: #333;
+    }
+    .annotation-section {
+      margin-top: 20px;
+      border-top: 1px dashed #eee;
+      padding-top: 20px;
+    }
+    .section-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .sub-section {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 2px solid #ddd;
+    }
+    .keyword-area {
+      min-height: 80px;
+    }
+  </Style>
+
+  <Header value="Game Review Analysis for LLM Training" />
+
+  <View className="message-box system-role">
+    <Header value="System Prompt:" />
+    <Text name="system_content" value="$system_prompt" />
+  </View>
+
+  <View className="message-box user-role">
+    <Header value="User Review:" />
+    <Text name="user_review_text" value="$user_review" />
+  </View>
+
+  <Header value="Structured Analysis (Assistant Response):" className="section-header" />
+
+  <View className="annotation-section">
+    <Header value="Sentiment" className="section-header" />
+    <View className="sub-section">
+      <Header value="Overall Sentiment:" />
+      <Choices name="sentiment_overall" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="positive" />
+        <Choice value="negative" />
+        <Choice value="neutral" />
+        <Choice value="mixed" />
+      </Choices>
+
+      <Header value="Recommendation:" />
+      <Choices name="sentiment_recommendation" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+
+      <Header value="Warning/Anti-recommendation:" />
+      <Choices name="sentiment_warning" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+    </View>
+  </View>
+
+  <View className="annotation-section">
+    <Header value="Specific Keywords" className="section-header" />
+    <View className="sub-section">
+      <Header value="Positive Keywords (comma-separated or one per line):" />
+      <TextArea name="specifics_positive_keywords" toName="user_review_text"
+                rows="4" editable="true" placeholder="e.g., stunning graphics, fluid combat"
+                className="keyword-area" />
+
+      <Header value="Negative Keywords (comma-separated or one per line):" />
+      <TextArea name="specifics_negative_keywords" toName="user_review_text"
+                rows="4" editable="true" placeholder="e.g., grindy battle pass, repetitive missions"
+                className="keyword-area" />
+    </View>
+  </View>
+
+  <View className="annotation-section">
+    <Header value="Negative Tracker Flags" className="section-header" />
+    <View className="sub-section">
+      <Header value="Ad/Game Mismatch:" />
+      <Choices name="nt_ad_mismatch" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+
+      <Header value="Game Cheating/Manipulating:" />
+      <Choices name="nt_cheating_manipulating" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+
+      <Header value="Bugs/Crashes/Performance Issues:" />
+      <Choices name="nt_bugs_crashes_performance" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+
+      <Header value="Monetization Issues:" />
+      <Choices name="nt_monetization" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+
+      <Header value="Live Ops/Events Issues:" />
+      <Choices name="nt_live_ops_events" toName="user_review_text" choice="single" showInline="true">
+        <Choice value="true" />
+        <Choice value="false" />
+      </Choices>
+    </View>
+  </View>
+
+</View>
