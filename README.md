@@ -7,6 +7,10 @@ Game teams struggle to extract actionable insights from the **immense volume of 
 ## The solution
 **AI-Powered Review Analysis:** this project automates the extraction of sentiment and key themes from game reviews using a fine-tuned LLM, providing structured data for data-driven decisions.
 
+<video src="https://github.com/user-attachments/assets/31316858-e336-438b-9fc7-c24fbd04415f" controls loop muted playsinline width="320">
+    Your browser does not support the video tag.
+</video>
+
 # Key Features and Functionality
 * **LLM Fine-Tuning:** Fine-tuned Llama3.1 model that approches the accuracy of sentiment and keyword extraction provided by commercial models like Gemini
 * **Automated Data Processing:** Pipeline to ingest game review data, process it through the LLM, and store structured JSON output in Parquet files.
