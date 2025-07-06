@@ -12,7 +12,7 @@ Game teams struggle to extract actionable insights from the **immense volume of 
 </video>
 
 # Key Features and Functionality
-* **LLM Fine-Tuning:** Fine-tuned Llama3.1 model that approches the accuracy of sentiment and keyword extraction provided by commercial models like Gemini
+* **LLM Fine-Tuning:** Fine-tuned Llama3.1 model that approaches the accuracy of sentiment and keyword extraction provided by commercial models like Gemini
 * **Automated Data Processing:** Pipeline to ingest game review data, process it through the LLM, and store structured JSON output in Parquet files.
 * **Flexible Data Ingestion:** Designed to integrate with custom web scrapers for automated review collection
 * **Interactive Streamlit (web) Applications:**
