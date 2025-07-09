@@ -35,10 +35,11 @@ ollama run hf.co/MrMike42/GameReview-llama3.1-8b-v9-Q4_K_M-GGUF
 | Model Version | Overall Score | Sentiment(F1) | Neg Tracker(F1) | Keywords(F1) |
 |:-------------:|:-------------:|:-------------:|:---------------:|:------------:|
 | Llama Baseline|         0.810 |         0.877 |            0.95 |        0.580 |
-| Fine-Tune | 0.854 | 0.911 | 0.96 | 0.674 |
-| Gemini 2 flash*| 0.855 | 0.916 | 0.95 | 0.677 |
+| Fine-Tune V9| 0.854 | 0.911 | 0.96 | 0.674 |
+| Fine-Tune V12|0.861|0.894|0.96|0.718|
+| Gemini 2.0 flash*| 0.855 | 0.916 | 0.95 | 0.677 |
 
-*Gemini 2 flash was used as a baseline comparison vs commercial models*
+*Gemini 2.0 flash was used as a baseline comparison vs commercial models*
 
 # LLM Output Schema
 ```
